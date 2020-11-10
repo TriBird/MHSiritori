@@ -1,24 +1,18 @@
 // author	: shigetomo sakuma
-// memo		: WordTFdetector
+// title	: WordTFdetector
+// memo		: Makes correct / incorrect judgment of the passed word.
 
 #pragma comment(lib,"wininet.lib")
 #include <windows.h>
 #include <wininet.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <iostream>
 
-bool WordTF_detector(char TargetWord[256]);
+bool WordTF_detector(std::string TargetWord_s){
+	char TargetWord[256];
+	std::char_traits<char>::copy(TargetWord, TargetWord_s.c_str(), TargetWord_s.size()+1);
 
-int main(){
-	char word[256] = "fish";
-	std::cout << word << ": " << (WordTF_detector(word)?"true":"false") << std::endl;
-
-	return 1;
-}
-
-bool WordTF_detector(char TargetWord[256]){
 	HINTERNET ih, uh;
 	char buf[256];
 	long rs = 0;
@@ -50,5 +44,11 @@ bool WordTF_detector(char TargetWord[256]){
 	} else {
 		return false;
 	}
+}
 
+int main() {
+	std::string word_s = "fish";
+	std::cout << word_s << ": " << (WordTF_detector(word_s) ? "true" : "false") << std::endl;
+
+	return 0;
 }

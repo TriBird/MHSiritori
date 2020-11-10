@@ -18,5 +18,21 @@
     <ClCompile Include="WordTF.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleCtrl.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\packages\PDCurses34.3.4.0.1\build\native\lib\Win32\v141\static\Debug\pdcurses.lib">
+      <Filter>リソース ファイル</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\packages\PDCurses34.3.4.0.1\build\native\include\curses.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
