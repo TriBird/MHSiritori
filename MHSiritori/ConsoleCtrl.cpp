@@ -50,7 +50,19 @@ void show_MonsterVisual(std::string MonsterName) {
   for (std::string str : MonsterVisual) {
     mvaddstr(i++, 11, str.c_str());
   }
+}
 
+void show_NextChar(std::string character) {
+  attrset(COLOR_PAIR(1));
+  character = "Next char: " + character;
+  mvaddstr(13, 5, character.c_str());
+}
+
+std::string IO_WordInput() {
+  curs_set(1);
+  std::string input;
+  std::cin >> input;
+  return input;
 }
 
 int main() {
@@ -70,6 +82,7 @@ int main() {
     show_MonsterName("Nargacuga");
     show_MonsterVisual("");
     show_progress(HitPoint);
+    show_NextChar(IO_WordInput());
 
     HitPoint -= 2;
 
